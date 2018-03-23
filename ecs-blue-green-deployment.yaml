@@ -29,6 +29,11 @@ Parameters:
     Description: >
       S3 Bucket used for nested templates
 
+  TemplateZip:
+    Type: String
+    Description: >
+      Template file used for
+
 
 Metadata:
   AWS::CloudFormation::Interface:
@@ -62,6 +67,7 @@ Resources:
         GitHubRepo: !Ref GitHubRepo
         GitHubBranch: !Ref GitHubBranch
         TemplateBucket: !Ref TemplateBucket
+        TemplateZip: !Ref TemplateZip
         Subnet1: !GetAtt VPC.Outputs.Subnet1
         Subnet2: !GetAtt VPC.Outputs.Subnet2
         VpcId: !GetAtt VPC.Outputs.VpcId
